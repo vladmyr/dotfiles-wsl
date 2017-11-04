@@ -15,6 +15,7 @@ function dotfiles_hasStagedFiles {
 
 function dotfiles_gitStage {
   dotfiles_gitInclude
+  git add .
   if dotfiles_hasStagedFiles; 
   then 
     cGreen='\033[0;32m'
