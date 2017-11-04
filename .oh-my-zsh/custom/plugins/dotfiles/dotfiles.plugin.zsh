@@ -30,12 +30,12 @@ function dotfiles_gitCommit {
 }
 
 function dotfiles {
-  if [ "$1" = "-u" ] 
+  if [ "$1" = "-u" ] || [ "$1" = "--upload" ]
   then
     dotfiles_gitStage
     dotfiles_gitCommit
     git push
-  elif [ "$1" = "-d" ] 
+  elif [ "$1" = "-d" ] || [ "$1" = "--download" ]
   then
     git pull --rebase
   else
