@@ -31,22 +31,30 @@ function dotfiles_gitCommit {
   fi
 }
 
+function dotfiles_gitUpload {
+  dotfiles_gitStage
+  dotfiles_gitCommit
+  git push
+}
+
+function dotfiles_gitDownload {
+  git pull --rebase
+}
+
 function dotfiles {
   if [ "$1" = "-u" ] || [ "$1" = "--upload" ]
   then
-    dotfiles_gitStage
-    dotfiles_gitCommit
-    git push
+    dotfiles_gitUpload
   elif [ "$1" = "-d" ] || [ "$1" = "--download" ]
   then
-    git pull --rebase
+    dotfiles_gitDownload
   else
     echo "\
 Dotfiles synchronization tool.
 Options:
-  -u, --upload    upload configations to the cloud
-  -d, --download  download configuration from the cloud
-  -h, --help      print usage interface\
+  -u, --upload        upload configations to the cloud
+  -d, --download      download configuration from the cloud
+  -h, --help          print usage interface\
 "
   fi 
 }
