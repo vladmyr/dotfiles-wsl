@@ -1,8 +1,9 @@
 function dotfiles_gitInclude {
+  pwd=$(pwd)
   filepath=".gitinclude"
   while IFS= read -r line
   do
-    git add -f $line
+    git add -f "$line"
   done < "$filepath"
 }
 
