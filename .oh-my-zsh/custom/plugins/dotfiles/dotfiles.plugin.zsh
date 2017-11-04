@@ -6,15 +6,27 @@ function dotfiles_gitInclude {
   done < "$filepath"
 }
 
+function dotfiles_hasStagedFiles {
+  diffList=$(git diff --name-only --cached | cat)
+  [ ! -z ${diffList// } ] && return
+  false
+}
+
 function dotfiles_gitStage {
   dotfiles_gitInclude
-  git add .
-  echo "Staged changes:"
-  git diff --name-only --cached | cat
+  if dotfiles_hasStagedFiles; 
+  then 
+    cGreen='\033[0;32m'
+    cNone='\033[0m'
+    echo -e "Staged changes:\n${cGreen}$(git diff --name-only --cached | cat)${cNone}"
+  fi
 }
 
 function dotfiles_gitCommit {
-  git commit -m "$(date +%Y.%m.%d_%H:%M:%S) from $(whoami)@$(hostname)"
+  if dotfiles_hasStagedFiles;
+  then
+    git commit -m "$(date +%Y.%m.%d_%H:%M:%S) from $(whoami)@$(hostname)"
+  fi
 }
 
 function dotfiles {
