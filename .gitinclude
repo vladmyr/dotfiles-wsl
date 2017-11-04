@@ -1,0 +1,4 @@
+.zshrc
+.oh-my-zsh/custom/startup.zsh
+.oh-my-zsh/custom/themes/*
+.oh-my-zsh/custom/plugins/*
