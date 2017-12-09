@@ -9,3 +9,4 @@ alias es="vi ~/.oh-my-zsh/custom/startup.zsh"
 
 # navigation aliases
 alias ltta="cd /mnt/c/dev/js/learnittwice-api/"
+alias dev="cd /mnt/c/dev/"
