@@ -1,3 +1,7 @@
+# autostart
+sudo service dbus start
+sudo service avahi-daemon start
+
 # shortcuts
 alias c="clear"
 alias startSSHAgent="eval '$(ssh-agent -s)'"
