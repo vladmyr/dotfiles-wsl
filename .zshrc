@@ -97,5 +97,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Custom mounting points
+sudo mount --bind /mnt/c /c
+
 # docker
 export DOCKER_HOST=tcp://127.0.0.1:2375
