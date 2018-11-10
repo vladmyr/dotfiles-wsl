@@ -96,3 +96,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# docker
+export DOCKER_HOST=tcp://127.0.0.1:2375
