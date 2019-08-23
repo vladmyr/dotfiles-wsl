@@ -102,3 +102,6 @@ sudo mount --bind /mnt/c /c
 
 # docker
 export DOCKER_HOST=tcp://127.0.0.1:2375
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
